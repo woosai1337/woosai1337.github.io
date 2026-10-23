@@ -493,7 +493,7 @@ function initTerminal() {
       <div class="terminal-line">  <span class="term-prompt">clear</span>     - Очистить консоль</div>
     `,
     whoami: () => `
-      <div class="terminal-line"><span class="term-hl">Егор Литвинов (voosai)</span></div>
+      <div class="terminal-line"><span class="term-hl">Егор Литвинов (woosai)</span></div>
       <div class="terminal-line">Роль: Fullstack & Systems Developer, GameDev, Telegram & WebGL Engineer</div>
       <div class="terminal-line">Локация: Беларусь</div>
       <div class="terminal-line">Специализация: Быстрые Serverless-решения (Cloudflare), Telegram Mini Apps, 3D WebGL, шейдеры и Fabric-моды.</div>
@@ -522,7 +522,7 @@ function initTerminal() {
       <div class="terminal-line">Email:    <a href="mailto:woosaiiiii@gmail.com" style="color: #38bdf8; text-decoration: underline;">woosaiiiii@gmail.com</a></div>
     `,
     sudo: () => `
-      <div class="terminal-line" style="color: #ef4444;">[sudo] пароль для voosai: ***********</div>
+      <div class="terminal-line" style="color: #ef4444;">[sudo] пароль для woosai: ***********</div>
       <div class="terminal-line" style="color: #f59e0b;">Доступ предоставлен! Кофе варится, баги фиксируются... ☕</div>
     `,
     matrix: () => {
@@ -547,7 +547,7 @@ function initTerminal() {
     const commandEntry = document.createElement('div');
     commandEntry.innerHTML = `
       <div class="terminal-line" style="margin-top: 10px;">
-        <span class="term-prompt">voosai@macbook:~$</span> <span>${escapeHtml(cmdStr)}</span>
+        <span class="term-prompt">woosai@macbook:~$</span> <span>${escapeHtml(cmdStr)}</span>
       </div>
     `;
     output.appendChild(commandEntry);
@@ -590,7 +590,7 @@ function initTerminal() {
 function runMatrixEffect(container) {
   const lines = [
     "01000101 01100111 01101111 01110010",
-    "4C 69 74 76 69 6E 6F 76 20 28 76 6F 6F 73 61 69 29",
+    "4C 69 74 76 69 6E 6F 76 20 28 77 6F 6F 73 61 69 29",
     "SYSTEM BREACH: CLOUDFLARE_WORKERS_ONLINE",
     "INJECTING GLSL SHADERS INTO MATRIX PIPELINE...",
     "ACCESS GRANTED: FULLSTACK_GOD_MODE_ACTIVATED"
