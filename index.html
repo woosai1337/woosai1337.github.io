@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Егор Литвинов (woosai) — Портфолио & Инженерные проекты</title>
+  <meta name="description" content="Портфолио Егора Литвинова: Telegram Mini Apps, Serverless (Cloudflare), 3D WebGL / Three.js, GameDev, GLSL шейдеры, Fabric моды Minecraft и системные утилиты.">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Interactive Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-name">woosai</span>
+        <span class="logo-cursor">_</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span class="status-text">Available for projects</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#projects" class="nav-link">Проекты <span class="badge-count">12</span></a>
+        <a href="#skills" class="nav-link">Стек</a>
+        <a href="#terminal" class="nav-link">Терминал</a>
+        <a href="#awards" class="nav-link">Конкурсы</a>
+        <a href="#contact" class="nav-link nav-contact-btn">Связаться</a>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#projects" class="mobile-link">Проекты (12)</a>
+    <a href="#skills" class="mobile-link">Стек & Навыки</a>
+    <a href="#terminal" class="mobile-link">Интерактивный терминал</a>
+    <a href="#awards" class="mobile-link">Конкурсы & Награды</a>
+    <a href="#contact" class="mobile-link">Контакты</a>
+    <div class="mobile-socials">
+      <a href="https://t.me/tarakan_egor" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://github.com/woosai1337" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:woosaiiiii@gmail.com">Email</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="tag-icon">⚡</span>
+          <span>Fullstack • GameDev • WebGL & Shaders • Telegram Mini Apps</span>
+        </div>
+
+        <h1 class="hero-title">
+          Привет, я <span class="gradient-text">Егор Литвинов</span>.
+          <br>Создаю цифровые миры, ботов и быстрые сервисы.
+        </h1>
+
+        <p class="hero-description">
+          Разработчик полного цикла: от высоконагруженных serverless-воркеров Cloudflare и Telegram Mini Apps до 3D-графики на WebGL/Three.js, шейдеров и модов для Minecraft.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span>Исследовать проекты</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="https://t.me/tarakan_egor" target="_blank" rel="noopener" class="btn btn-glass">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            <span>Написать в Telegram</span>
+          </a>
+          <a href="#terminal" class="btn btn-outline terminal-trigger-btn">
+            <span class="cli-icon">&gt;_</span>
+            <span>Запустить терминал</span>
+          </a>
+        </div>
+
+        <!-- Metrics Strip -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number">12+</div>
+            <div class="metric-label">Реализованных проектов</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">Cloudflare</div>
+            <div class="metric-label">Workers, KV & Durable Objects</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">WebGL & 3D</div>
+            <div class="metric-label">Three.js, GLSL, Physics</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">3x</div>
+            <div class="metric-label">Республиканские награды</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="section-header">
+        <div class="section-subtitle">// PORTFOLIO SHOWCASE</div>
+        <h2 class="section-title">Избранные проекты</h2>
+        <p class="section-desc">Архитектура, игры, сервисы реального времени и системные утилиты</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-container">
+        <button class="filter-pill active" data-filter="all">Все проекты <span class="filter-count">12</span></button>
+        <button class="filter-pill" data-filter="tg-serverless">Telegram & Serverless <span class="filter-count">3</span></button>
+        <button class="filter-pill" data-filter="gamedev-3d">GameDev & WebGL 3D <span class="filter-count">4</span></button>
+        <button class="filter-pill" data-filter="minecraft-shaders">Minecraft & Шейдеры <span class="filter-count">2</span></button>
+        <button class="filter-pill" data-filter="systems-creative">Systems & Creative <span class="filter-count">3</span></button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Rendered by JS / Static cards for instant display -->
+      </div>
+    </section>
+
+    <!-- SKILLS & TECH STACK SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="section-header">
+        <div class="section-subtitle">// TECH STACK</div>
+        <h2 class="section-title">Технологический арсенал</h2>
+        <p class="section-desc">Инструменты и технологии, в которых ориентируюсь на практике</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Domain 1: Telegram & Serverless -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">⚡</div>
+            <div>
+              <h3 class="category-name">Telegram & Serverless</h3>
+              <p class="category-sub">Реалтайм боты и облачная инфраструктура</p>
+            </div>
+          </div>
+          <ul class="skills-list">
+            <li><span class="skill-dot"></span>Cloudflare Workers & Pages</li>
+            <li><span class="skill-dot"></span>Cloudflare KV & Durable Objects</li>
+            <li><span class="skill-dot"></span>Telegram Bot API & WebApp SDK</li>
+            <li><span class="skill-dot"></span>Scheduled Cron Triggers</li>
+            <li><span class="skill-dot"></span>Node.js / TypeScript / REST API</li>
+            <li><span class="skill-dot"></span>WebSockets & Server-Sent Events</li>
+          </ul>
+        </div>
+
+        <!-- Domain 2: GameDev & WebGL -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">🎮</div>
+            <div>
+              <h3 class="category-name">GameDev & 3D WebGL</h3>
+              <p class="category-sub">Интерактивная графика и симуляции</p>
+            </div>
+          </div>
+          <ul class="skills-list">
+            <li><span class="skill-dot"></span>Three.js & WebGL 2.0 Pipeline</li>
+            <li><span class="skill-dot"></span>GLSL Shaders & Post-processing</li>
+            <li><span class="skill-dot"></span>Physics Engines & Soft-body mesh</li>
+            <li><span class="skill-dot"></span>HTML5 Canvas 2D Games</li>
+            <li><span class="skill-dot"></span>Blender 3D Scripting (Python / bpy)</li>
+            <li><span class="skill-dot"></span>Particle FX & Game Loops</li>
+          </ul>
+        </div>
+
+        <!-- Domain 3: Low-Level & Minecraft -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">💎</div>
+            <div>
+              <h3 class="category-name">Minecraft & Low-Level</h3>
+              <p class="category-sub">Fabric моддинг и системный код</p>
+            </div>
+          </div>
+          <ul class="skills-list">
+            <li><span class="skill-dot"></span>Java 21 & Fabric API (1.21+)</li>
+            <li><span class="skill-dot"></span>Mixins & Bytecode injection</li>
+            <li><span class="skill-dot"></span>OpenGL Shader post-effects</li>
+            <li><span class="skill-dot"></span>Raycasting & Projectile physics</li>
+            <li><span class="skill-dot"></span>Android build-tools (aapt2, d8)</li>
+            <li><span class="skill-dot"></span>Bash / PowerShell автоматизация</li>
+          </ul>
+        </div>
+
+        <!-- Domain 4: Frontend & Creative -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <div class="category-icon">🎨</div>
+            <div>
+              <h3 class="category-name">Frontend & Creative Tech</h3>
+              <p class="category-sub">UI/UX, звук и конкурсный продакшн</p>
+            </div>
+          </div>
+          <ul class="skills-list">
+            <li><span class="skill-dot"></span>Modern Vanilla JS (ESNext)</li>
+            <li><span class="skill-dot"></span>Responsive Glassmorphism CSS</li>
+            <li><span class="skill-dot"></span>Web Audio API & Voiceover sync</li>
+            <li><span class="skill-dot"></span>SVG & Micro-interactions</li>
+            <li><span class="skill-dot"></span>Xray / VLESS XTLS-Reality DevOps</li>
+            <li><span class="skill-dot"></span>Git, pnpm monorepos & CI/CD</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE TERMINAL SECTION -->
+    <section class="section terminal-section" id="terminal">
+      <div class="section-header">
+        <div class="section-subtitle">// INTERACTIVE CONSOLE</div>
+        <h2 class="section-title">Терминал разработчика</h2>
+        <p class="section-desc">Прямой доступ к системе: вводите команды или нажимайте на чипсы</p>
+      </div>
+
+      <div class="terminal-window">
+        <div class="terminal-topbar">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="terminal-title">woosai@dev-macbook: ~ (zsh)</div>
+          <div class="terminal-status">LIVE</div>
+        </div>
+
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line banner-line">
+            <pre class="terminal-banner">
+ __      __   ____    ____    _____     _      _____ 
+ \ \    / /  / __ \  / __ \  / ____|   / \    |_   _|
+  \ \  / /  | |  | || |  | || (___    / _ \     | |  
+   \ \/ /   | |  | || |  | | \___ \  / ___ \    | |  
+    \  /    | |__| || |__| | ____) |/ /   \ \  _| |_ 
+     \/      \____/  \____/ |_____//_/     \_\|_____|
+            </pre>
+          </div>
+          <div class="terminal-line system-msg">Добро пожаловать в интерактивную консоль Егора Литвинова.</div>
+          <div class="terminal-line system-msg">Наберите <span class="term-hl">help</span> для списка команд или кликните быстрые команды ниже:</div>
+          
+          <div class="terminal-chips">
+            <button class="term-chip" data-cmd="skills">skills</button>
+            <button class="term-chip" data-cmd="projects">projects</button>
+            <button class="term-chip" data-cmd="awards">awards</button>
+            <button class="term-chip" data-cmd="whoami">whoami</button>
+            <button class="term-chip" data-cmd="contact">contact</button>
+            <button class="term-chip" data-cmd="matrix">matrix</button>
+            <button class="term-chip" data-cmd="clear">clear</button>
+          </div>
+
+          <div id="terminal-output"></div>
+
+          <form class="terminal-input-row" id="terminal-form">
+            <span class="term-prompt">woosai@macbook:~$</span>
+            <input type="text" id="terminal-input" class="term-input" autocomplete="off" spellcheck="false" placeholder="введите команду (напр. help)...">
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS & COMPETITIONS SECTION -->
+    <section class="section awards-section" id="awards">
+      <div class="section-header">
+        <div class="section-subtitle">// HONORS & RECOGNITION</div>
+        <h2 class="section-title">Конкурсы и признание</h2>
+        <p class="section-desc">Проекты, отмеченные на республиканском и отраслевом уровне</p>
+      </div>
+
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-badge">2026</div>
+          <div class="award-icon">🏆</div>
+          <h3 class="award-title">IX Рэспубліканскі конкурс «Здравствуй, мир!»</h3>
+          <p class="award-project">Праект «Нітка мары»</p>
+          <p class="award-desc">
+            Мультимедийная интерактивная экспозиция: 6 тематических сцен, синхронизация со звуковой дорожкой, покадровая авторская анимация и адаптивная режиссура визуального ряда.
+          </p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-badge">РЕСПУБЛИКАНСКИЙ</div>
+          <div class="award-icon">⚡</div>
+          <h3 class="award-title">Конкурс «Геймификация в энергосбережении»</h3>
+          <p class="award-project">Игра «ЭнергоДом» (Match-3)</p>
+          <p class="award-desc">
+            Интерактивная игра на базе WebGL/Canvas с физикой падения фишек, комбо-эффектами, прогрессией дома и образовательной механикой энергоэффективности.
+          </p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-badge">КУЛЬТУРНЫЙ ПРОЕКТ</div>
+          <div class="award-icon">🏛️</div>
+          <h3 class="award-title">Год белорусской женщины</h3>
+          <p class="award-project">Виртуальная выставка «За пределами возможного»</p>
+          <p class="award-desc">
+            Виртуальный 3D музей на Three.js с физической шейдерной симуляцией развевающегося государственного флага и интерактивной галереей выдающихся личностей.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="contact-box">
+        <div class="contact-header">
+          <span class="contact-tag">ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ</span>
+          <h2 class="contact-title">Готовы создать нечто выдающееся?</h2>
+          <p class="contact-desc">
+            Открыт для интересных предложений, разработки Telegram Mini Apps, сложных веб-приложений, 3D/WebGL визуализаций и серверлесс архитектуры.
+          </p>
+        </div>
+
+        <div class="contact-links-grid">
+          <a href="https://t.me/tarakan_egor" target="_blank" rel="noopener" class="contact-link-card">
+            <div class="contact-link-icon tg-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            </div>
+            <div class="contact-link-info">
+              <span class="contact-link-label">Telegram</span>
+              <span class="contact-link-val">@tarakan_egor</span>
+            </div>
+            <span class="contact-action-arrow">→</span>
+          </a>
+
+          <a href="https://github.com/woosai1337" target="_blank" rel="noopener" class="contact-link-card">
+            <div class="contact-link-icon gh-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div class="contact-link-info">
+              <span class="contact-link-label">GitHub</span>
+              <span class="contact-link-val">github.com/woosai1337</span>
+            </div>
+            <span class="contact-action-arrow">→</span>
+          </a>
+
+          <div class="contact-link-card copy-email-btn" id="copy-email-btn">
+            <div class="contact-link-icon mail-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-link-info">
+              <span class="contact-link-label">Email (клик для копирования)</span>
+              <span class="contact-link-val" id="email-text">woosaiiiii@gmail.com</span>
+            </div>
+            <span class="contact-action-arrow" id="copy-indicator">📋</span>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copy">© 2026 Егор Литвинов (woosai). Built with precision and passion.</div>
+          <div class="footer-tech">Cloudflare • WebGL • TypeScript • Java</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROJECT MODAL (DEEP DIVE) -->
+  <div class="modal-overlay" id="project-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть">✕</button>
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-body">
+        <div class="modal-category" id="modal-category">CATEGORY</div>
+        <h2 class="modal-title" id="modal-title">Project Name</h2>
+        <p class="modal-summary" id="modal-summary"></p>
+        
+        <div class="modal-section">
+          <h4>Архитектура & Особенности</h4>
+          <ul class="modal-features" id="modal-features"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4>Стек технологий</h4>
+          <div class="modal-tags" id="modal-tags"></div>
+        </div>
+
+        <div class="modal-actions" id="modal-actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
