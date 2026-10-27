@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VISION SYNTH // Инструмент жестов рук</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <!-- MediaPipe Hands & Camera Utils -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Hidden Webcam Video Source -->
+  <video id="webcam" playsinline style="display: none;"></video>
+
+  <!-- Fullscreen Canvas -->
+  <canvas id="outputCanvas"></canvas>
+
+  <!-- Top Glass HUD Header -->
+  <header class="hud-top">
+    <div class="hud-brand">
+      <div class="live-dot"></div>
+      <div class="brand-text">
+        <span class="title">VISION-SYNTH</span>
+        <span class="sub" id="hud-status">WAITING FOR ENGINE START...</span>
+      </div>
+    </div>
+
+    <!-- Live Note Readout -->
+    <div class="note-box">
+      <span class="note-label">NOTE:</span>
+      <span class="note-val" id="note-display">--</span>
+      <span class="freq-val" id="freq-display">--- Hz</span>
+    </div>
+
+    <!-- Presets -->
+    <div class="controls-panel">
+      <div class="btn-group">
+        <button class="pill-btn active" data-preset="neon-lead">NEON LEAD</button>
+        <button class="pill-btn" data-preset="cyber-bass">CYBER BASS</button>
+        <button class="pill-btn" data-preset="dream-pad">DREAM PAD</button>
+      </div>
+
+      <div class="btn-group">
+        <button class="pill-btn active" data-scale="pentatonic">PENTATONIC</button>
+        <button class="pill-btn" data-scale="dorian">DORIAN</button>
+        <button class="pill-btn" data-scale="theremin">THEREMIN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Gesture Helper Tips -->
+  <div class="hud-hints">
+    <div class="hint-card right-hint">
+      <span class="h-title">👉 ПРАВАЯ РУКА (МЕЛОДИЯ)</span>
+      <p><b>Влево / Вправо:</b> Высота ноты</p>
+      <p><b>Вверх / Вниз:</b> Яркость фильтра</p>
+      <p><b>Щипок (Большой + Указательный):</b> Запуск звука ⚡</p>
+    </div>
+
+    <div class="hint-card left-hint">
+      <span class="h-title">👈 ЛЕВАЯ РУКА (ЭФФЕКТЫ)</span>
+      <p><b>Высота ладони:</b> Глубина Эхо / Reverb</p>
+      <p><b>Щипок пальцами:</b> Мощный 808 Sub-Bass 💥</p>
+    </div>
+  </div>
+
+  <!-- Splash / Start Screen -->
+  <div class="splash-overlay" id="splash-screen">
+    <div class="splash-card">
+      <div class="splash-icon">🖐️ ⚡ 🎹</div>
+      <h1>VISION SYNTH</h1>
+      <p class="subtitle">Интерактивный синтезатор, управляемый реальными жестами рук через веб-камеру MacBook</p>
+
+      <div class="how-it-works">
+        <div class="step">
+          <span class="step-num">1</span>
+          <span>Камера на 100% честно отслеживает 21 сустав ваших пальцев</span>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <span>Соедините большой и указательный пальцы (щипок), чтобы извлечь звук</span>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <span>Двигайте рукой в воздухе для изменения высоты и тембра нот</span>
+        </div>
+      </div>
+
+      <button class="start-btn" id="btn-start">
+        <span class="btn-effect"></span>
+        ЗАПУСТИТЬ СИНТЕЗАТОР
+      </button>
+      <span class="perm-note">Потребуется однократное разрешение на доступ к камере в браузере</span>
+    </div>
+  </div>
+
+  <script src="synth.js"></script>
+  <script src="tracker.js"></script>
+</body>
+</html>

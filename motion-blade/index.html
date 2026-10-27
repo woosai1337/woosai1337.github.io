@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOTION BLADE // Кибер-слэшер руками</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- MediaPipe CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Hidden Webcam Video -->
+  <video id="webcam" playsinline style="display: none;"></video>
+
+  <!-- Canvas -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Top In-Game HUD -->
+  <div class="game-hud">
+    <div class="hud-box score-box">
+      <span class="hud-label">СЧЁТ</span>
+      <span class="hud-num" id="score-val">0</span>
+      <span class="hud-sub">РЕКОРД: <span id="highscore-val">0</span></span>
+    </div>
+
+    <div class="hud-box lives-box">
+      <span class="hud-label">ЖИЗНИ</span>
+      <span class="hud-hearts" id="lives-val">❤️❤️❤️</span>
+    </div>
+  </div>
+
+  <!-- Start Screen Modal -->
+  <div class="modal-overlay" id="start-screen">
+    <div class="modal-card">
+      <div class="brand-badge">NEURAL MOTION ENGINE</div>
+      <h1 class="glitch-title">MOTION BLADE</h1>
+      <p class="tagline">Кибер-слэшер световыми клинками перед веб-камерой</p>
+
+      <div class="instructions-grid">
+        <div class="inst-item">
+          <div class="inst-icon">⚔️</div>
+          <div class="inst-text">
+            <b>Машите руками в воздухе:</b> ваши указательные пальцы оставляют неоновые световые мечи
+          </div>
+        </div>
+        <div class="inst-item">
+          <div class="inst-icon">💎</div>
+          <div class="inst-text">
+            <b>Рубите кристаллы и сферы:</b> быстрый взмах разрезает цель пополам и дает очки
+          </div>
+        </div>
+        <div class="inst-item">
+          <div class="inst-icon">☠️</div>
+          <div class="inst-text">
+            <b>НЕ ТРОГАЙТЕ БОМБЫ:</b> касание красной бомбы взрывает её и отнимает жизнь!
+          </div>
+        </div>
+      </div>
+
+      <button class="action-btn" id="btn-start-game">
+        <span>НАЧАТЬ ИГРУ</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Game Over Screen Modal -->
+  <div class="modal-overlay" id="gameover-screen" style="display: none;">
+    <div class="modal-card danger-card">
+      <h1 class="gameover-title">ИГРА ОКОНЧЕНА</h1>
+      <div class="final-score-box">
+        <span class="final-label">ВАШ СЧЕТ:</span>
+        <span class="final-val" id="gameover-score">0</span>
+      </div>
+
+      <button class="action-btn restart-btn" id="btn-restart-game">
+        <span>СЫГРАТЬ СНОВА</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+  <script src="tracker.js"></script>
+</body>
+</html>
