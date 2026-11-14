@@ -16,6 +16,24 @@
     @media(max-width:650px){.wrap{width:calc(100% - 40px)}.topbar{height:70px}.nav{gap:0}.nav>a:not(.contact){display:none}.nav .contact{padding:10px 14px}.hero{display:flex;flex-direction:column;align-items:stretch;padding:64px 0 35px;gap:12px}.hero h1{font-size:clamp(62px,17vw,96px);margin:25px 0 20px}.intro{font-size:14px;max-width:420px}.art{height:345px;width:100%;margin-top:0}.art-card{width:250px;height:320px}.art-caption{right:10px}.stamp{left:calc(50% - 155px);bottom:34px}.ticker{padding:15px 0}.section{padding:75px 0}.section-head{display:block;margin-bottom:35px}.section-note{margin-top:20px}.about-grid{grid-template-columns:1fr;gap:28px}.principles{grid-template-columns:1fr;margin-top:42px}.principle{min-height:130px}.principle h3{margin-top:17px}.work .wrap{padding-top:75px;padding-bottom:75px}.work-top{display:block}.work-top p{margin-top:18px}.projects{grid-template-columns:1fr;gap:14px}.project{min-height:300px}.project:last-child{margin-top:0;min-height:270px}.work-foot{font-size:8px}.contact-section{padding:72px 0 45px}.contact-box{padding:44px 25px}.contact-box:after{font-size:100px;right:-5px}.contact-box h2{font-size:53px}.footer{font-size:8px;gap:15px}.footer span:first-child{max-width:150px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
+
+  <style id="motion-upgrade">
+    :root{--spot-x:52vw;--spot-y:28vh;--scroll-progress:0}
+    body{background-image:radial-gradient(ellipse at var(--spot-x) var(--spot-y),rgba(213,239,130,.13),transparent 30rem)}
+    body:before{content:"";position:fixed;z-index:20;left:0;right:0;top:0;height:3px;transform-origin:left;transform:scaleX(var(--scroll-progress));background:linear-gradient(90deg,var(--orange),var(--lime),var(--green));pointer-events:none}
+    .hero{perspective:1000px}.hero>div:first-child{animation:hero-in .9s cubic-bezier(.2,.75,.2,1) both}.hero .eyebrow{animation:fade-up .65s .12s both}.hero h1{animation:fade-up .8s .2s both}.hero .intro{animation:fade-up .8s .34s both}.hero-actions{animation:fade-up .8s .45s both}.art{transform-style:preserve-3d;animation:art-in 1s .16s cubic-bezier(.2,.75,.2,1) both}.art-card{animation:card-float 8s ease-in-out infinite;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}.art:hover .art-card{box-shadow:0 35px 75px #343c2b2e}.sun{animation:sun-glow 5s ease-in-out infinite alternate}.orb{animation:orbit-drift 11s ease-in-out infinite}.orbit{animation:orbit-spin 22s linear infinite}.stamp{animation:stamp-enter .7s .8s both,stamp-sway 7s 1.5s ease-in-out infinite}.ticker span{animation:ticker-run 35s linear infinite}.ticker:hover span{animation-play-state:paused}
+    .section-head,.about-grid,.principles,.work-top,.project,.contact-box,.footer{transition:opacity .75s,transform .75s cubic-bezier(.2,.75,.2,1)}
+    [data-reveal]{opacity:0;transform:translateY(28px)}[data-reveal].is-visible{opacity:1;transform:translateY(0)}
+    .principle{transition:background .25s,transform .3s}.principle:hover{background:#e9efdb;transform:translateY(-5px)}
+    .project{transform-style:preserve-3d;transition:transform .3s ease,box-shadow .3s}.project:hover{box-shadow:0 22px 50px #353d2a22}.project:hover .project-visual:before,.project:hover .project-visual:after{transition:transform .6s cubic-bezier(.2,.75,.2,1)}.project:first-child:hover .project-visual:before{transform:translate(-8px,-8px) scale(1.05)}.project:last-child:hover .project-visual:after{transform:scale(1.14)}.arrow{transition:transform .25s,background .25s,color .25s}.project:hover .arrow{transform:rotate(45deg);background:var(--ink);color:#fff}
+    .button{position:relative;overflow:hidden;isolation:isolate}.button:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(110deg,transparent 25%,#ffffff42 50%,transparent 75%);transform:translateX(-130%);transition:transform .65s}.button:hover:before{transform:translateX(130%)}.nav .contact{transition:background .2s,color .2s,border-color .2s}.nav .contact:hover{background:var(--green);color:white;border-color:var(--green)}
+    .eyebrow .dot{animation:dot-pulse 2s ease-in-out infinite}.contact-box{isolation:isolate}.contact-box:after{animation:star-turn 45s linear infinite;transform-origin:center}
+    @keyframes hero-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes fade-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes art-in{from{opacity:0;transform:translate3d(20px,12px,-30px) rotateY(-8deg)}to{opacity:1;transform:translate3d(0,0,0) rotateY(0)}}@keyframes card-float{0%,100%{transform:translateY(0) rotate(4deg)}50%{transform:translateY(-10px) rotate(2deg)}}@keyframes sun-glow{from{box-shadow:0 0 0 0 #e8a16800}to{box-shadow:0 0 38px 4px #e8a16855}}@keyframes orbit-drift{0%,100%{transform:translate(0,0)}50%{transform:translate(8px,-11px)}}@keyframes orbit-spin{to{transform:rotate(397deg)}}@keyframes stamp-enter{from{opacity:0;scale:.6}to{opacity:1;scale:1}}@keyframes stamp-sway{0%,100%{rotate:-12deg}50%{rotate:-5deg}}@keyframes ticker-run{to{transform:translateX(-35%)}}@keyframes dot-pulse{0%,100%{box-shadow:0 0 0 0 #e6754a60}50%{box-shadow:0 0 0 7px #e6754a00}}@keyframes star-turn{to{rotate:375deg}}
+    @media(max-width:650px){body{background-image:radial-gradient(ellipse at var(--spot-x) var(--spot-y),rgba(213,239,130,.1),transparent 22rem)}.ticker span{animation-duration:48s}.project:hover{transform:none!important}}
+    @media(pointer:coarse){body{background-image:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}}
+  </style>
+
 </head>
 <body>
   <header class="wrap topbar">
@@ -39,5 +57,23 @@
     <section class="wrap contact-section" id="contact"><div class="contact-box"><div class="label">03 / СЛЕДУЮЩИЙ ШАГ</div><h2>Нужен разработчик?<br><em>Давайте обсудим.</em></h2><a class="button" href="https://t.me/tarakan_egor" target="_blank" rel="noopener">Написать в Telegram <span>↗</span></a></div></section>
   </main>
   <footer class="wrap footer"><span>© 2026 · ЕГОР ЛИТВИНОВ</span><span>FULLSTACK · WEBGL · GAMEDEV ✳</span><a href="#top">НАВЕРХ ↑</a></footer>
+
+  <script>
+    (()=>{
+      const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealTargets=document.querySelectorAll('.section-head,.about-grid,.principles,.work-top,.project,.contact-box');
+      revealTargets.forEach((el,i)=>{el.dataset.reveal='';el.style.transitionDelay=`${Math.min(i%4,3)*90}ms`});
+      if(!reduce&&'IntersectionObserver'in window){
+        const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.14,rootMargin:'0px 0px -35px 0px'});
+        revealTargets.forEach(el=>observer.observe(el));
+      }else revealTargets.forEach(el=>el.classList.add('is-visible'));
+      let frame=0;
+      const update=(x,y)=>{if(frame)return;frame=requestAnimationFrame(()=>{document.documentElement.style.setProperty('--spot-x',`${x}px`);document.documentElement.style.setProperty('--spot-y',`${y}px`);const max=document.documentElement.scrollHeight-innerHeight;document.documentElement.style.setProperty('--scroll-progress',max>0?String(scrollY/max):'0');frame=0})};
+      addEventListener('pointermove',e=>{if(e.pointerType==='mouse'&&!reduce)update(e.clientX,e.clientY)},{passive:true});
+      addEventListener('scroll',()=>update(innerWidth*.5,innerHeight*.2),{passive:true});update(innerWidth*.5,innerHeight*.2);
+      if(!reduce&&matchMedia('(pointer:fine)').matches){document.querySelectorAll('.project').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(800px) rotateX(${-y*4}deg) rotateY(${x*5}deg) translateY(-3px)`});card.addEventListener('pointerleave',()=>{card.style.transform=''})})}
+    })();
+  </script>
+
 </body>
 </html>
